@@ -1,6 +1,6 @@
-# WebOs
+<img src="http://webosorg.herokuapp.com/logo" width="250">
 
-(Coming Soon)
+#### (Coming Soon)
 
 ## Synopsys
 
