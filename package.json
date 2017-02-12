@@ -1,0 +1,47 @@
+{
+  "name": "WebOs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "rollup.config.js",
+  "dependencies": {
+    "babel-preset-es2015-rollup": "^3.0.0",
+    "backbone-events-standalone": "^0.2.7",
+    "debug": "^2.6.0",
+    "eventemitter3": "^2.0.2",
+    "rollup": "^0.41.4",
+    "rollup-plugin-babel": "^2.7.1",
+    "rollup-plugin-eslint": "^3.0.0"
+  },
+  "devDependencies": {
+    "cssnano": "^3.10.0",
+    "livereload": "^0.6.0",
+    "node-static": "^0.7.9",
+    "npm-run-all": "^4.0.1",
+    "postcss-cssnext": "^2.9.0",
+    "postcss-nested": "^1.0.0",
+    "postcss-simple-vars": "^3.0.0",
+    "rollup-plugin-commonjs": "^7.0.0",
+    "rollup-plugin-node-resolve": "^2.0.0",
+    "rollup-plugin-postcss": "^0.2.0",
+    "rollup-plugin-replace": "^1.1.1",
+    "rollup-plugin-uglify": "^1.0.1",
+    "rollup-watch": "^3.2.2"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "rollup -c --watch",
+    "livereload": "livereload 'src/build/'",
+    "static-dev-server": "static src/",
+    "dev-watch": "npm-run-all --parallel dev livereload static-dev-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SurenAt93/rollup.base.config.git"
+  },
+  "author": "SurenAt93",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SurenAt93/WebOs/issues"
+  },
+  "homepage": "https://github.com/SurenAt93/WebOs#readme"
+}
