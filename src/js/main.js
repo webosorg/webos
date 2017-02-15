@@ -1,10 +1,3 @@
-import webOs from './core/init';
-
-// Import styles
-import '../css/main.css';
-
-window.webOs = webOs;
-
 // Add a debugger
 import debug from 'debug';
 
@@ -21,6 +14,36 @@ if (ENV !== 'production') {
 }
 
 log('::: App Start :::');
+
+import webOs from './core/init';
+
+// Import styles
+import '../css/main.css';
+
+window.webOs = webOs;
+
+// test
+webOs.dispatcher.emit('create:new:app', {
+  app: {
+    name: 'webos-terminal',
+    uuid: '22e1d'
+  }
+});
+
+webOs.dispatcher.emit('create:new:app', {
+  app: {
+    name: 'webos-terminal-face',
+    uuid: '31qwa'
+  }
+});
+
+// test
+webOs.appQueue.removeApp({
+  app: {
+    uuid: '22e1d'
+  }
+});
+
 
 // Create main workers
 // ...
