@@ -1,4 +1,5 @@
 import Dispatcher from './dispatcher.js';
+
 import AppQueue from './appQueue.js';
 
 let webOs = {};
