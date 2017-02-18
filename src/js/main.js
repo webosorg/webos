@@ -17,10 +17,11 @@ log('::: App Start :::');
 
 import webOs from './core/init';
 
+window.webOs = webOs;
+
 // Import styles
 import '../css/main.css';
 
-window.webOs = webOs;
 
 // test
 webOs.dispatcher.emit('create:new:app', {

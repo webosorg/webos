@@ -1,0 +1,42 @@
+If we use Polymer 2 ::: it put 3 global variables ::: their are 'goog', 'Polymer', '__classPropertyDefaults'
+
+For check how many global variables Polymer add in window we should be this steps
+
+1) Run app without Polymer
+2) In devTool write this lines
+  localStorage.setItem('oldKeys', Object.keys(window));
+  // we save in local storeage all keys in window
+3) Run app with Polymer
+  localStorage.setItem('newKeys', Object.keys(window));
+  // we save in local storeage all keys in window
+4) We shold be get old and new window includes from localStorage ::: NOTE ։։։ After
+   this step dont refresh page
+   Write this lines in devtool
+   let oldKeys = localStorage.getItem('oldKeys').split(',');
+   let newKeys = localStorage.getItem('newKeys').split(',');
+5) Write in devtool function which get 2 array and return not equal elems
+   That way we recived differance between ald and new window includes
+   // function checkArraysDifferance
+   function checkArraysDifferance(arr1, arr2) {
+    let result = [];
+    let min;
+    let max;
+    if (arr1.length > arr2.length) {
+    min = arr2;
+      max = arr1;
+    } else {
+    min = arr1;
+      max = arr2;
+    }
+
+    max.forEach(item => {
+     if (min.indexOf(item) === -1) {
+      result.push(item);
+     }
+    });
+
+    return result;
+  }
+6) Call checkArraysDifferance function with oldKeys and newKeys ::: like this
+   checkArraysDifferance(oldKeys, newKeys);
+7) And you can see array which have Polymer added global varibles

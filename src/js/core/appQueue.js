@@ -1,3 +1,13 @@
+import debug from 'debug';
+
+const log = debug('appQueue:log');
+// Disable logging in production
+if (ENV !== 'production') {
+  debug.enable('*');
+} else {
+  debug.disable();
+}
+
 import proxying from '../libs/proxying.js';
 
 export default class AppQueue {
@@ -11,10 +21,15 @@ export default class AppQueue {
 
   createNewApp(options) {
     if (!options.app) {
+      // TODO ::: Create Error Handler
+      // see => link ::: https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Error
+      // see => link ::: https://learn.javascript.ru/oop-errors 
+      // see => link ::: http://expressjs.com/ru/guide/error-handling.html
       throw new Error(`With create:new:app event send app options
         ex. \'dispatcher.emit('create:new:app', {app: ...})\'`);
     }
-    this.pushApp(proxying(options.app))
+    this.pushApp(proxying(options.app));
+    log('create new app');
     // function 'proxying' can get second argument which your custom
     // Proxy handler
     // TODO ::: Create restricting logic for marge custom and
@@ -28,6 +43,7 @@ export default class AppQueue {
         ex. \'dispatcher.emit('create:new:app', {app: ...})\'`);      
     } else if (options.app) {
       this.queue.splice(this.queue.indexOf(this.getAppByUuid(options.app.uuid)), 1);
+      log('remove app');
     }
   }
 
