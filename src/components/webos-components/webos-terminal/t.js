@@ -1,5 +1,5 @@
 // Extend Polymer.Element base class
-class MyCarousel extends Polymer.Element {
+class Terminal extends Polymer.Element {
 
   static get is() { return 'webos-terminal' }
 
@@ -15,4 +15,4 @@ class MyCarousel extends Polymer.Element {
 }
 
 // Register custom element definition using standard platform API
-customElements.define(MyCarousel.is, MyCarousel);
+customElements.define(Terminal.is, Terminal);
