@@ -22,8 +22,7 @@ window.webOs = webOs;
 // Import styles
 import '../css/main.css';
 
-
-// test
+// test for create application
 webOs.dispatcher.emit('create:new:app', {
   app: {
     name: 'webos-terminal',
@@ -31,6 +30,7 @@ webOs.dispatcher.emit('create:new:app', {
   }
 });
 
+// test for create application
 webOs.dispatcher.emit('create:new:app', {
   app: {
     name: 'webos-terminal-face',
@@ -38,13 +38,62 @@ webOs.dispatcher.emit('create:new:app', {
   }
 });
 
-// test
+// test for remove application
 webOs.appQueue.removeApp({
   app: {
     uuid: '22e1d'
   }
 });
 
+// test for create new process with dependecies, fucntion and onmessage callback
+webOs.dispatcher.emit(
+  'create:new:process',
+  // process body
+  {
+    deps: ['https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js'],
+    fn: () => {
+      let arr = [];
+      for (let i = 0; i < 1000000; i++) {
+        arr.push(i);
+      }
+      let odds = _.filter(arr, (item) => {
+        if (item % 2 != 0) {
+          return item;
+        }
+      });
+
+      postMessage({odds: odds});
+
+      // this example for implementation process work from devtools by webOs.process.queue
+      // for reproduce this write this line in devtools
+      // webOs.process.queue[0].postMessage([1, 2, 3, 4]);
+      // NOTE ։։։ Please be attentive it will be work when terminate flag is false 
+
+      onmessage = (e) => {
+        let result = _.filter(e.data, (item) => {
+          if (item % 2 == 0) {
+            return item;
+          }
+        });
+
+        postMessage({evens: result});
+      }
+    }
+  },
+  // options
+  {
+    // onmessage
+    onmessage(e) {
+      log('From another process ::: ', e.data);
+    },
+    // onerror
+    onerror(err) {
+      log('From another process ::: ', err);
+    },
+
+    terminate: false
+  }
+);
 
 // Create main workers
 // ...
