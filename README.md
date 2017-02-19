@@ -55,6 +55,7 @@ It was tested only on Linux.
 #### Dependencies
  - Nodejs
  - Npm or Yarn
+ - Git
 
 #### Global packages
  - rollup   =>
@@ -91,6 +92,13 @@ It was tested only on Linux.
  ```
  sudo yarn global add polymer-cli
  ```
+
+#### Clone
+
+```
+git clone https://github.com/webosorg/webos.git
+cd webos
+```
 
 #### Install dependencies
 ```
