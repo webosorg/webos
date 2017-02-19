@@ -46,3 +46,58 @@ Today Web technology is the **powerful tool** and there are many reasons for tha
    - Endless technical race of browsers etc..
 
 The aim of this project is to combine all modern and newest features in one place and show this by the OS imitation.
+
+## Install
+
+#### Operating system
+It was tested only on Linux.
+
+#### Dependencies
+ - Nodejs
+ - Npm or Yarn
+
+#### Global packages
+ - rollup   =>
+ 
+ ```
+ sudo npm i -g rollup
+ ```
+ or
+ 
+ ```
+ sudo yarn global add rollup
+ ```
+ 
+ - bower    =>
+ 
+ ```
+ sudo npm i -g bower
+ ```
+ 
+ or
+ 
+ ```
+ sudo yarn global add bower
+ ```
+ 
+ - polymer  =>
+ 
+ ```
+ sudo npm i -g polymer-cli
+ ```
+ 
+ or
+ 
+ ```
+ sudo yarn global add polymer-cli
+ ```
+
+#### Install dependencies
+```
+npm run install-all
+```
+It will be run npm install and bower install ::: See => /package.json -> scripts
+#### Run
+```
+npm run dev-watch
+```
