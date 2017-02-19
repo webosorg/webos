@@ -34,7 +34,12 @@ webOs.dispatcher.emit('create:new:app', {
 webOs.dispatcher.emit('create:new:app', {
   app: {
     name: 'webos-terminal-face',
-    uuid: '31qwa'
+    uuid: '31qwa',
+    // test
+    process: {
+      new: true,
+      // ....
+    }
   }
 });
 
@@ -96,4 +101,7 @@ webOs.dispatcher.emit(
 );
 
 // Create main workers
+// ...
+
+// Test for new application with another process calc logic
 // ...

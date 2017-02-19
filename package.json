@@ -6,6 +6,7 @@
   "dependencies": {
     "babel-preset-es2015-rollup": "^3.0.0",
     "backbone-events-standalone": "^0.2.7",
+    "bower": "^1.8.0",
     "debug": "^2.6.0",
     "eventemitter3": "^2.0.2",
     "rollup": "^0.41.4",
@@ -32,9 +33,11 @@
     "dev": "rollup -c --watch",
     "npm-install": "npm i",
     "bower-install": "bower install",
+    "bower-install-root": "bower install --allow-root",
     "livereload": "livereload 'src/build/'",
     "static-dev-server": "static src/",
     "install-all": "npm-run-all npm-install bower-install",
+    "install-all-root": "npm-run-all npm-install bower-install-root",
     "dev-watch": "npm-run-all --parallel dev livereload static-dev-server"
   },
   "repository": {
