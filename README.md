@@ -57,6 +57,13 @@ It was tested only on Linux.
  - Npm or Yarn
  - Git
 
+#### Global packages
+   - npm-run-all
+
+   ```
+   npm i npm-run-all -g
+   ```
+
 #### Clone
 
 ```
