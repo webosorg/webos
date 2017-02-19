@@ -77,7 +77,7 @@ webOs.dispatcher.emit(
         });
 
         postMessage({evens: result});
-      }
+      };
     }
   },
   // options

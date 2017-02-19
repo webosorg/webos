@@ -30,8 +30,11 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "rollup -c --watch",
+    "npm-install": "npm i",
+    "bower-install": "bower install",
     "livereload": "livereload 'src/build/'",
     "static-dev-server": "static src/",
+    "install-all": "npm-run-all npm-install bower-install",
     "dev-watch": "npm-run-all --parallel dev livereload static-dev-server"
   },
   "repository": {
