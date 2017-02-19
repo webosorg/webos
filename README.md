@@ -58,40 +58,11 @@ It was tested only on Linux.
  - Git
 
 #### Global packages
- - rollup   =>
- 
- ```
- sudo npm i -g rollup
- ```
- or
- 
- ```
- sudo yarn global add rollup
- ```
- 
- - bower    =>
- 
- ```
- sudo npm i -g bower
- ```
- 
- or
- 
- ```
- sudo yarn global add bower
- ```
- 
- - polymer  =>
- 
- ```
- sudo npm i -g polymer-cli
- ```
- 
- or
- 
- ```
- sudo yarn global add polymer-cli
- ```
+   - npm-run-all
+
+   ```
+   npm i npm-run-all -g
+   ```
 
 #### Clone
 
@@ -101,10 +72,32 @@ cd webos
 ```
 
 #### Install dependencies
+
 ```
 npm run install-all
 ```
+
+or if you have to build as root run this line
+
+```
+npm run install-all-root
+```
+
 It will be run npm install and bower install ::: See => /package.json -> scripts
+(Or if 'npm run install-all-root' => run npm install and bower install --allow-root)
+
+For only bower install you can run
+
+```
+npm run bower-install
+```
+
+or if you have bower global
+
+```
+bower install
+```
+
 #### Run
 ```
 npm run dev-watch
