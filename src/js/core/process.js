@@ -15,17 +15,26 @@ export default class Process {
     this.dispatcher = dispatcher;
     this.queue = [];
     log('run Process class');
-    dispatcher.on('create:new:process', this.newProcess, this);
+    this.dispatcher.on('create:new:process', this.newProcess, this);
+  }
+
+  create(processBody, options) {
+    return this.runWorker(processBody, options, true);
   }
 
   newProcess(processBody, options) {
+    this.runWorker(processBody, options);
+  }
+
+  runWorker(processBody, options, promisify) {
+    let worker;
     if (!processBody || (processBody && !processBody.fn)) {
       throw new Error(
       `
         With 'create:new:process' event you should send processBody
         ex.
         ...dispatcher.emit(
-            'create:new:process',
+            'create:new:process', // or webOs.process.create(...);
             {
               deps: Array ::: (optional) ::: In this case you should write all dependency paths,
               fn: Function ::: (requires) ::: It is this function witch will run in new process          
@@ -53,7 +62,7 @@ export default class Process {
       code = code.substring(code.indexOf('{') + 1, code.lastIndexOf('}'));
 
       let blob = new Blob([code], {type: 'application/javascript'});
-      let worker = new Worker(URL.createObjectURL(blob));
+      worker = new Worker(URL.createObjectURL(blob));
       // create in processes queue
       this.queue.push(worker);
 
@@ -83,7 +92,10 @@ export default class Process {
           throw new Error(`'onerror' in new process should be Function`);
         }
       }
+    }
 
+    if (promisify && worker) {
+      return worker;
     }
   }
 }
