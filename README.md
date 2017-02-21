@@ -22,6 +22,7 @@
        * Shadow Dom
        * HTML Templates
        * HTML Import
+   - SIMD (Single Instruction/Multiple Data)
    - JavaScript Next
        * ES6, ES7 ...
    - Canvas, WebGL
