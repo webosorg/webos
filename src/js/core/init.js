@@ -19,3 +19,5 @@ export default webOs;
 'It is only for webos-bot testing'
 'It is only for webos-bot testing'
 'It is only for webos-bot testing'
+'It is only for webos-bot testing'
+'It is only for webos-bot testing'
