@@ -5,7 +5,7 @@ const log = debug('dispatcher:log');
 if (ENV !== 'production') {
   debug.enable('*');
 } else {
-  debug.disable();
+  debug.disable()
 }
 
 import EE from 'eventemitter3';

@@ -28,7 +28,7 @@ export default class AppQueue {
       throw new Error(`With create:new:app event send app options
         ex. \'dispatcher.emit('create:new:app', {app: ...})\'`);
     }
-    this.pushApp(proxying(options.app));
+    this.pushApp(proxying(options.app))
     log('create new app');
     // function 'proxying' can get second argument which your custom
     // Proxy handler

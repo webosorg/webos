@@ -13,11 +13,3 @@ webOs.appQueue = new AppQueue(webOs.dispatcher);
 webOs.process = new Process(webOs.dispatcher);
 
 export default webOs;
-
-'It is only for webos-bot testing'
-'It is only for webos-bot testing'
-'It is only for webos-bot testing'
-'It is only for webos-bot testing'
-'It is only for webos-bot testing'
-'It is only for webos-bot testing'
-'It is only for webos-bot testing'

@@ -7,7 +7,7 @@ const log = debug('process:log');
 if (ENV !== 'production') {
   debug.enable('*');
 } else {
-  debug.disable();
+  debug.disable()
 }
 
 export default class Process {
