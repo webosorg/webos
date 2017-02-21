@@ -4,9 +4,9 @@ import AppQueue from './appQueue.js';
 
 import Process from './process';
 
-let webOs = {}
+let webOs = {};
 
-webOs.dispatcher = new Dispatcher;
+webOs.dispatcher = new Dispatcher
 
 webOs.appQueue = new AppQueue(webOs.dispatcher);
 
