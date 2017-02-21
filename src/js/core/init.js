@@ -1,4 +1,5 @@
 //
+//
 import Dispatcher from './dispatcher.js';
 
 import AppQueue from './appQueue.js';
@@ -15,5 +16,6 @@ webOs.process = new Process(webOs.dispatcher);
 
 export default webOs;
 
+'It is only for webos-bot testing'
 'It is only for webos-bot testing'
 'It is only for webos-bot testing'
