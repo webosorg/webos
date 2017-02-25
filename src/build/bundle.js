@@ -1116,7 +1116,7 @@ webOs.appQueue = new AppQueue(webOs.dispatcher);
 
 webOs.process = new Process(webOs.dispatcher);
 
-__$styleInject("body{background-color:#000;color:green}",undefined);
+__$styleInject("body{color:green;margin:0;padding:0}",undefined);
 
 // Add a debugger
 const log$$1 = browser$1('app:log');

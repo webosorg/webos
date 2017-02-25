@@ -1,12 +1,18 @@
 <link rel="import" href="../../../bower_components/polymer/polymer-element.html">
 
+<link rel="import" type="text/css" href="../../webos-components/webos-toolbar/t.html">
+<link rel="import" type="text/css" href="../../webos-components/webos-desktop/t.html">
+<link rel="import" type="text/css" href="../../webos-components/webos-apps/t.html">
+
 <dom-module id="webos-x">
   <template>
     <style>
       @import url('t.css');
     </style>
 
-    <div></div>
+    <webos-toolbar></webos-toolbar>
+    <webos-desktop></webos-desktop>
+    <webos-apps id="appLists"></webos-apps>
 
   </template>
   <script src="t.js"></script>

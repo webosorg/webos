@@ -12,7 +12,6 @@ class Apps extends Polymer.Element {
     super.connectedCallback();
     console.log('Log ::: Component created ::: <webos-apps>');
   }
-
 }
 
 // Register custom element definition using standard platform API

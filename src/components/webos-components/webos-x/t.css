@@ -1,3 +1,7 @@
 :host {
   display: block;
+  height: 100vh !important;
+  width: 100% !important;
+  background-color: white;
+  overflow: hidden;
 }

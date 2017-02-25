@@ -10,6 +10,11 @@ class Image extends Polymer.Element {
 
   connectedCallback() {
     super.connectedCallback();
+    let imageUrl = this.getAttribute('img');
+    if (!imageUrl) {
+      imageUrl = '../../../images/desktop-image-default.jpg';
+    }
+    this.backgroundImage = 'url(\'\' + imageUrl + \'\')';
     console.log('Log ::: Component created ::: <webos-desktop-image>');
   }
 
