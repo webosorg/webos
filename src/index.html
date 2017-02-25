@@ -6,10 +6,33 @@
     <script type="text/javascript" src="init.js"></script>
     <script type="text/javascript" src="build/bundle.js"></script>
     <!-- NOTE ։։։ If we use Polymer 2 ::: it put 3 global variables ::: their are 'goog', 'Polymer', '__classPropertyDefaults' -->
-    <link rel="import" type="text/css" href="components/webos-components/webos-terminal/t.html">
+    <link rel="import" type="text/css" href="components/webos-components/webos-x/t.html">
+    <link rel="import" type="text/css" href="components/webos-components/webos-toolbar/t.html">
+    <link rel="import" type="text/css" href="components/webos-components/webos-toolbar-clock/t.html">
+    <link rel="import" type="text/css" href="components/webos-components/webos-desktop/t.html">
+    <link rel="import" type="text/css" href="components/webos-components/webos-desktop-image/t.html">
+    <link rel="import" type="text/css" href="components/webos-components/webos-apps/t.html">
+    <link rel="import" type="text/css" href="components/webos-components/webos-app-icon/t.html">
   </head>
   <body>
-    <h2>WebOs</h2>
-    <webos-terminal></webos-terminal>
+    <webos-x>
+      <webos-toolbar>
+        <!-- ... -->
+        <webos-toolbar-clock></webos-toolbar-clock>
+        <!-- ... -->
+      </webos-toolbar>
+      <webos-desktop>
+        <webos-desktop-image img="..."></webos-desktop-image>
+      </webos-desktop>
+      <webos-apps>
+        <webos-app-icon icon="..."></webos-app-icon>
+        <webos-app-icon icon="..."></webos-app-icon>
+        <webos-app-icon icon="..."></webos-app-icon>
+        <webos-app-icon icon="..."></webos-app-icon>
+        <webos-app-icon icon="..."></webos-app-icon>
+        <webos-app-icon icon="..."></webos-app-icon>
+        <webos-app-icon icon="..."></webos-app-icon>
+      </webos-apps>
+    </webos-x>
   </body>
 </html>
