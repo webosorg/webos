@@ -104,3 +104,10 @@ bower install
 ```
 npm run dev-watch
 ```
+
+## UI/UX
+
+#### First look for design
+
+<img src="http://webosorg.herokuapp.com/webosDrawing" width="750">
+
