@@ -107,7 +107,7 @@ npm run dev-watch
 
 ## UI/UX
 
-#### First look for design
+#### First thoughts about design
 
 <img src="http://webosorg.herokuapp.com/webosDrawing" width="750">
 
