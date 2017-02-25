@@ -1,7 +1,3 @@
-'It is only for webos-bot testing'
-var q
-let k
-
 import debug from 'debug';
 
 import MakeWorkerSource from '../libs/workerSource.maker.js';
