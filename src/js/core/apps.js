@@ -38,6 +38,7 @@ export default class Apps {
     this.dispatcher.on('app:touch', this.touchApp, this);
     this.dispatcher.on('remove:app', this.removeApp, this);
     this.dispatcher.on('ready:component:appList', this.readyAppList, this);
+    this.dispatcher.on('close:app', this.closeApp, this);
   }
 
   /**
@@ -159,12 +160,18 @@ export default class Apps {
     let currentApp = this.getAppByName(options.name);
     if (currentApp) {
       if (!this.getAppByName(currentApp.name, this.activeApps)) {
-        this.dispatcher.emit('open:app', currentApp);
+        this.dispatcher.emit('open:app', {
+          app: currentApp
+        });
         this.activeApps.push(currentApp);
       }
       // create logic for open app
     } else {
       throw new Error('unknown application');
     }
+  }
+
+  closeApp(options) {
+    this.activeApps.splice(this.allApps.indexOf(this.getAppByName(options.app.name)), 1);
   }
 }

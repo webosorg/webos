@@ -1,0 +1,55 @@
+<link rel="import" href="../../../bower_components/polymer/polymer-element.html">
+
+<dom-module id="webos-app">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+      #appWindow {
+        width: 250px;
+        height: 400px;
+        background-color: red;
+      }
+      #header {
+        width: 100%;
+        height: 50px;
+        background-color: black;
+      }
+      #appInfo {
+        float: left;
+      }
+      #appIcon {
+        width: 50px;
+        height: 50px;
+        float: left;
+      }
+      #controllButtons {
+        width: 100px;
+        height: 50px;
+        float: right;
+      }
+      #close, #minimize {
+        float: right;
+      }
+    </style>
+
+    <div id="appWindow">
+      <div id="header" on-track="handleTrack" draggable="true">
+        <div id="appInfo">
+          <div id="appIcon"></div>
+          <div id="appName"></div>
+        </div>
+        <div id="controllButtons">
+          <button id="close" on-click="close">X</button>
+          <button id="minimize" on-click="minimize">-</button>
+        </div>
+      </div>
+      <div id="body">
+        Application Body
+      </div>
+    </div>
+
+  </template>
+  <script src="t.js"></script>
+</dom-module>

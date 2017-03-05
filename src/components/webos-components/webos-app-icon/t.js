@@ -12,7 +12,7 @@ class Icon extends Polymer.Element {
     super.connectedCallback();
     let iconUrl = this.getAttribute('icon') ||
                   '../../../webos-apps/images/default.png'; // default;
-    this.appName = this.getAttribute('name') || 'unknow';
+    this.appName = this.getAttribute('name') || 'unknown';
     console.log(iconUrl, this.appName);
     this.$.appIcon.backgroundImage = 'url(\'\' + iconUrl + \'\')';
     this.$.appName.innerHTML = this.appName;

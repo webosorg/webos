@@ -8,9 +8,32 @@ class Desktop extends Polymer.Element {
     return {};
   }
 
+  static get properties() {
+    return {
+      apps: {
+        type: Array,
+        value: () => []
+      }
+    };
+  }
+
   connectedCallback() {
     super.connectedCallback();
+    this._installListeners();
     console.log('Log ::: Component created ::: <webos-desktop>');
+  }
+
+  _installListeners() {
+    webOs.dispatcher.on('open:app', this.openApp, this);
+    webOs.dispatcher.on('close:app', this.closeApp, this);
+  }
+
+  openApp(options) {
+    this.push('apps', options.app);
+  }
+
+  closeApp(options) {
+    this.splice('apps', this.apps.indexOf(options.app), 1);
   }
 
 }

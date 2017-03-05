@@ -16,4 +16,6 @@ webOs.apps = new Apps(webOs.dispatcher);
 
 webOs.process = new Process(webOs.dispatcher);
 
+Object.freeze(webOs);
+
 export default webOs;

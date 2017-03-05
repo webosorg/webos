@@ -2,6 +2,8 @@
 
 <link rel="import" type="text/css" href="../../webos-components/webos-desktop-image/t.html">
 
+<link rel="import" type="text/css" href="../../webos-components/webos-app/t.html">
+
 <dom-module id="webos-desktop">
   <template>
     <style>
@@ -10,10 +12,22 @@
         width: inherit;
         height: inherit;
       }
+      #workStation {
+        width: inherit;
+        height: inherit;
+        position: absolute;
+      }
     </style>
-
-
+    
     <webos-desktop-image img="../../../images/desktop-image-default.jpg"></webos-desktop-image>
+
+    <div id="workStation">
+      <dom-repeat items="[[apps]]">
+        <template>
+          <webos-app name$="[[item.name]]" icon$="[[item.icon]]"></webos-app>
+        </template>
+      </dom-repeat>
+    </div>
   </template>
   <script src="t.js"></script>
 </dom-module>
