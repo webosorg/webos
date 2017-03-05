@@ -14,9 +14,7 @@ if (ENV !== 'production') {
   debug.disable();
 }
 
-/** Class representing a process for webos.
- *  @extends EventEmmiter3
- */
+/** Class representing a process for webos. */
 
 export default class Process {
   /**
