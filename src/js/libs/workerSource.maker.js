@@ -1,4 +1,17 @@
+/**
+ * Module for make worker source.
+ * @module libs/workerSource.maker
+ * @see module:core/process
+ */
+
+/** Class representing a worker source maker. */
+
 export default class MakeWorkerSource {
+  /**
+   * Check options and call 'workerSource' method.
+   * @param { object } options - Options for worker body. Can contain worker dependency and fn.
+   */
+
   constructor(options) {
     this.options = options;
     if (options.deps) {
@@ -10,6 +23,11 @@ export default class MakeWorkerSource {
     this.deps = "\'" + this.deps + "\'";
     this.workerSource();
   }
+
+  /**
+   * Make worker source.
+   * @return { Function }
+   */
 
   workerSource() {
     // TODO ::: Optimize this case

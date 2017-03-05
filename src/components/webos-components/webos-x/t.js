@@ -22,10 +22,10 @@ class X extends Polymer.Element {
 
   _toggleAppsListVisibility(e) {
     let height = window.innerHeight;
-    let halfWindowWidth = window.innerWidth / 2;
+    // let halfWindowWidth = window.innerWidth / 2;
     let y = e.y;
     let x = e.x;
-    if (height - y < 70 && (x > halfWindowWidth - 120 && x < halfWindowWidth + 120)) {
+    if (height - y < 70/* && (x > halfWindowWidth - 120 && x < halfWindowWidth + 120)*/) {
       this.appsList.style.visibility = 'visible';
     } else {
       this.appsList.style.visibility = 'hidden';

@@ -1,3 +1,7 @@
+/**
+ * The process for webos.
+ * @module core/process
+ */
 import debug from 'debug';
 
 import MakeWorkerSource from '../libs/workerSource.maker.js';
@@ -10,21 +14,58 @@ if (ENV !== 'production') {
   debug.disable();
 }
 
+/** Class representing a process for webos.
+ *  @extends EventEmmiter3
+ */
+
 export default class Process {
+  /**
+   * Create a dispatcher, processes and _installListeners.
+   * @param { Dispatcher } dispatcher - The main dispatcher.
+   */
   constructor(dispatcher) {
     this.dispatcher = dispatcher;
-    this.queue = [];
+    this.processes = [];
     log('run Process class');
+    this._installListeners();
+  }
+
+  /**
+   * Set the listeners.
+   */
+
+  _installListeners() {
     this.dispatcher.on('create:new:process', this.newProcess, this);
   }
+
+  /**
+   * Method for create new process in webos.
+   * @param { object } processBody - Process body can contain process dependencies and fn
+   * @param { object } options - options can contain onmessage and onerror callbacks and terminate flag
+   * @return { worker object } worker - return 'runWorker' method with 'processBody, options, true'
+   * The 3th param in 'runWorker' method is promisify flag. Different between with 'create' and 'newProcess'
+   * is theirs returned value. NOTE։ 'newProcess' method nothing returned. 
+   */
 
   create(processBody, options) {
     return this.runWorker(processBody, options, true);
   }
 
+  /**
+   * Method for create new process in webos.
+   * @param { object } processBody - Process body can contain process dependencies and fn
+   * @param { object } options - options can contain onmessage and onerror callbacks and terminate flag
+   */
+
   newProcess(processBody, options) {
     this.runWorker(processBody, options);
   }
+
+  /**
+   * Method for create new process in webos.
+   * @param { object } processBody - Process body can contain process dependencies and fn
+   * @param { object } options - options can contain onmessage and onerror callbacks and terminate flag
+   */
 
   runWorker(processBody, options, promisify) {
     let worker;
@@ -63,8 +104,8 @@ export default class Process {
 
       let blob = new Blob([code], {type: 'application/javascript'});
       worker = new Worker(URL.createObjectURL(blob));
-      // create in processes queue
-      this.queue.push(worker);
+      // create in processes
+      this.processes.push(worker);
 
       if (options.onmessage) {
         if (typeof options.onmessage === 'function') {

@@ -3,10 +3,39 @@
 <dom-module id="webos-app-icon">
   <template>
     <style>
-      @import url('t.css');
+      :host {
+        display: inline-block;
+      }
+
+      #appIcon {
+        display: inherit;
+        width: 50px;
+        height: 50px;
+        border: 1px solid red;
+        border-radius: 50%;
+        position: relative;
+        cursor: pointer;
+      }
+
+      #appName {
+        top: -45px;
+        visibility: hidden;
+        position: absolute;
+        width: 45px;
+        color: white;
+        height: 10px;
+        border: 1px solid black;
+        background-color: rgba(0,0,0,0,0.5);
+      }
+
+      #appIcon:hover #appName{
+        visibility: visible;
+      }
     </style>
 
-    <div></div>
+    <div id="appIcon" on-click="touchApp">
+      <span id="appName"></span>
+    </div>
 
   </template>
   <script src="t.js"></script>

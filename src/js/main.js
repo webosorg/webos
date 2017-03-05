@@ -44,7 +44,7 @@ webOs.dispatcher.emit('create:new:app', {
 });
 
 // test for remove application
-webOs.appQueue.removeApp({
+webOs.apps.removeApp({
   app: {
     uuid: '22e1d'
   }

@@ -5,11 +5,15 @@
 <dom-module id="webos-desktop">
   <template>
     <style>
-      @import url('t.css');
+      :host {
+        display: block;
+        width: inherit;
+        height: inherit;
+      }
     </style>
 
-    <webos-desktop-image img="../../../images/desktop-image-default.jpg"></webos-desktop-image>
 
+    <webos-desktop-image img="../../../images/desktop-image-default.jpg"></webos-desktop-image>
   </template>
   <script src="t.js"></script>
 </dom-module>

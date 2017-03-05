@@ -1,4 +1,15 @@
+/**
+ * Default handler for Proxying.
+ * @module libs/app.proxy.handler
+ * @see module:libs/proxying
+ */
+
+/** Class representing a default handler for applications Proxying. */
 export default class AppProxyHandler {
+  /**
+   * Getter.
+   * @return { any } target[prop] - Return true when try to get 'uuid.
+   */
   get(target, prop) {
     if (prop == '__uuid') {
       return target.uuid;
@@ -8,6 +19,11 @@ export default class AppProxyHandler {
     }
     return target[prop];
   }
+
+  /**
+   * Setter.
+   * @return { any } value
+   */
 
   set(target, prop, value) {
     if (prop == 'uuid' || prop == 'name') {

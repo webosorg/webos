@@ -3,7 +3,13 @@
 <dom-module id="webos-desktop-image">
   <template>
     <style>
-      @import url('t.css');
+      :host {
+        display: block;
+        width: inherit;
+        height: inherit;
+        background-image: url(../../../images/desktop-image-default.jpg);
+        background-size: cover;
+      }
     </style>
 
     <div></div>

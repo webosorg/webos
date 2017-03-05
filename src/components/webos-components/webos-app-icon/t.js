@@ -10,7 +10,19 @@ class Icon extends Polymer.Element {
 
   connectedCallback() {
     super.connectedCallback();
+    let iconUrl = this.getAttribute('icon') ||
+                  '../../../webos-apps/images/default.png'; // default;
+    this.appName = this.getAttribute('name') || 'unknow';
+    console.log(iconUrl, this.appName);
+    this.$.appIcon.backgroundImage = 'url(\'\' + iconUrl + \'\')';
+    this.$.appName.innerHTML = this.appName;
     console.log('Log ::: Component created ::: <webos-app-icon>');
+  }
+
+  touchApp() {
+    webOs.dispatcher.emit('app:touch', {
+      name: this.appName
+    });
   }
 
 }

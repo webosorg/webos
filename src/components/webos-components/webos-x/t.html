@@ -1,4 +1,4 @@
-<link rel="import" href="../../../bower_components/polymer/polymer-element.html">
+<link rel="import" href="../../../bower_components/polymer/polymer.html">
 
 <link rel="import" type="text/css" href="../../webos-components/webos-toolbar/t.html">
 <link rel="import" type="text/css" href="../../webos-components/webos-desktop/t.html">
@@ -7,7 +7,13 @@
 <dom-module id="webos-x">
   <template>
     <style>
-      @import url('t.css');
+      :host {
+        display: block;
+        height: 100vh !important;
+        width: 100% !important;
+        background-color: white;
+        overflow: hidden;
+      }
     </style>
 
     <webos-toolbar></webos-toolbar>
