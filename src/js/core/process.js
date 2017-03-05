@@ -41,7 +41,7 @@ export default class Process {
    * @param { object } processBody - Process body can contain process dependencies and fn
    * @param { object } options - options can contain onmessage and onerror callbacks and terminate flag
    * @return { worker object } worker - return 'runWorker' method with 'processBody, options, true'
-   * The 3th param in 'runWorker' method is promisify flag. Different between with 'create' and 'newProcess'
+   * The 3th param in 'runWorker' method is promisify flag. Different between 'create' and 'newProcess'
    * is theirs returned value. NOTE։ 'newProcess' method nothing returned. 
    */
 
