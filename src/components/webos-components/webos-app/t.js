@@ -24,7 +24,7 @@ class App extends Polymer.Element {
   close(e) {
     webOs.dispatcher.emit('close:app', {
       app: {
-        name: this.name
+        name: this.appName
       }
     })
   }

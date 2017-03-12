@@ -1,7 +1,7 @@
 // Extend Polymer.Element base class
-class Apps extends Polymer.Element {
+class DockPanel extends Polymer.Element {
 
-  static get is() { return 'webos-apps' }
+  static get is() { return 'webos-dock-panel' }
 
   static get config() {
     // properties, observers meta data
@@ -21,11 +21,11 @@ class Apps extends Polymer.Element {
     super.connectedCallback();
     this._installListeners();
     webOs.dispatcher.emit('ready:component:appList');
-    console.log('Log ::: Component created ::: <webos-apps>');
+    console.log('Log ::: Component created ::: <webos-dock-panel>');
   }
 
   _installListeners() {
-    webOs.dispatcher.on('create:app', this.createApp, this);
+    webOs.dispatcher.on('create:app:in:dock', this.createApp, this);
   }
 
   createApp(options) {
@@ -38,4 +38,4 @@ class Apps extends Polymer.Element {
 }
 
 // Register custom element definition using standard platform API
-customElements.define(Apps.is, Apps);
+customElements.define(DockPanel.is, DockPanel);

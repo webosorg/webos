@@ -23,32 +23,32 @@ window.webOs = webOs;
 import '../css/main.css';
 
 // test for create application
-webOs.dispatcher.emit('create:new:app', {
-  app: {
-    name: 'webos-terminal',
-    uuid: '22e1d'
-  }
-});
+// webOs.dispatcher.emit('create:new:app', {
+//   app: {
+//     name: 'webos-terminal',
+//     uuid: '22e1d'
+//   }
+// });
 
 // test for create application
-webOs.dispatcher.emit('create:new:app', {
-  app: {
-    name: 'webos-terminal-face',
-    uuid: '31qwa',
-    // test
-    process: {
-      new: true,
-      // ....
-    }
-  }
-});
+// webOs.dispatcher.emit('create:new:app', {
+//   app: {
+//     name: 'webos-terminal-face',
+//     uuid: '31qwa',
+//     // test
+//     process: {
+//       new: true,
+//       // ....
+//     }
+//   }
+// });
 
 // test for remove application
-webOs.apps.removeApp({
-  app: {
-    uuid: '22e1d'
-  }
-});
+// webOs.apps.removeApp({
+//   app: {
+//     uuid: '22e1d'
+//   }
+// });
 
 // test for create new process with dependecies,
 // fucntion and onmessage callback.
