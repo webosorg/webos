@@ -24,7 +24,8 @@
     <div id="workStation">
       <dom-repeat items="[[apps]]">
         <template>
-          <webos-app name$="[[item.name]]" icon$="[[item.icon]]"></webos-app>
+          <webos-app id$="[[item.name]]" name$="[[item.name]]" icon$="[[item.icon]]">
+          </webos-app>
         </template>
       </dom-repeat>
     </div>

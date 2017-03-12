@@ -16,6 +16,9 @@ if (ENV != 'production') {
 
 import Calculator from './calculator.js';
 
+import Terminal from './terminal.js';
+
 export default [
-  (new Calculator).app
+  (new Calculator).app,
+  (new Terminal).app
 ];

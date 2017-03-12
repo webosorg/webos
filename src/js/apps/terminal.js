@@ -1,6 +1,6 @@
 /**
- * Calculator Applications.
- * @module core/apps/calculator
+ * Terminal Applications.
+ * @module core/apps/terminal
  * @see module:core/apps
  */
 
@@ -16,13 +16,14 @@ if (ENV != 'production') {
 
 import App from '../core/app.js';
 
-export default class Calculator extends App {
+export default class Terminal extends App {
   constructor() {
     super({
-      name: 'Calculator',
+      name: 'Terminal',
       dockApp: true,
-      componentPath: '/components/webos-components/webos-calculator/t.html',
-      elemName: 'webos-calculator'
+      uuid: '78',
+      componentPath: '/components/webos-components/webos-terminal/t.html',
+      elemName: 'webos-terminal'
     });
   }
 }

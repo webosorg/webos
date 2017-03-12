@@ -15,6 +15,7 @@ class App extends Polymer.Element {
     this.$.appName.innerHTML = this.appName;
     this.$.appIcon.backgroundImage = 'url(\'\' + appIcon + \'\')';
     console.log('Log ::: Component created ::: <webos-app>');
+    webOs.dispatcher.emit('ready:app', this.appName);
   }
 
   handleTrack(e) {

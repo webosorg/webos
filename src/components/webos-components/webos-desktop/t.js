@@ -26,16 +26,28 @@ class Desktop extends Polymer.Element {
   _installListeners() {
     webOs.dispatcher.on('open:app', this.openApp, this);
     webOs.dispatcher.on('close:app', this.closeApp, this);
+    webOs.dispatcher.on('ready:app', this.readyApp, this);
   }
 
   openApp(options) {
-    this.push('apps', options.app);
+    let app = options.app;
+    let link = document.createElement('link');
+    link.rel = 'import';
+    link.href = app.componentPath;
+    document.head.append(link);
+    this.push('apps', app);
+  }
+
+  readyApp(appName) {
+    let currentElem = this.shadowRoot.querySelector('#' + appName);
+    let currentBody = currentElem.shadowRoot.querySelector('#body');
+    let currentApp = this.get('apps').find(app => { return app.name == appName });
+    currentBody.append(document.createElement(currentApp.elemName));
   }
 
   closeApp(options) {
     this.splice('apps', this.apps.indexOf(options.app), 1);
   }
-
 }
 
 // Register custom element definition using standard platform API
