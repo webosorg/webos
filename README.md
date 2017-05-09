@@ -22,8 +22,8 @@
        * Shadow Dom
        * HTML Templates
        * HTML Import
-   - # SIMD (Single Instruction/Multiple Data)
-   - # Intersection Observer API
+   - (#) SIMD (Single Instruction/Multiple Data)
+   - (#) Intersection Observer API
    - JavaScript Next
        * ES6, ES7 ...
    - Canvas, WebGL
