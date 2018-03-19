@@ -1,9 +1,0 @@
-$bodyColor: black;
-$textColor: green;
-
-body {
-  /*background-color: $bodyColor;*/
-  color: $textColor;
-  margin: 0;
-  padding: 0;
-}
